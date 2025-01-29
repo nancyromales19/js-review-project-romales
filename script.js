@@ -4,7 +4,7 @@ const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
-function renderTools() {
+function renderTodos() {
     todoList.innerHTML = '';
     todos.forEach((todo, index) => {
         const li = document.createElement('li');
@@ -37,12 +37,12 @@ function editTodo(index) {
 }
 
 function deleteTodo(index){
-    if (confirm('Are you sure you want to delete this todo?')){
+    if (confirm('Are you sure you want to delete this todo?')) {
         todos.splice(index, 1);
-        renderTools();
+        renderTodos();
     }
 }
 
 todoForm.addEventListener('submit', addTodo);
 
-renderTools();  
+renderTodos();  
